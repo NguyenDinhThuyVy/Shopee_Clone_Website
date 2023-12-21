@@ -16,7 +16,7 @@ function Login() {
     resolver: yupResolver(schema)
   })
   const loginAccountMutaion = useMutation({
-    mutationFn: (body: FormData) => loginAccount(body)
+    mutationFn: (body:<FormData>) => loginAccount(body)
   })
   const onSubmit = handleSubmit(() => {
     // console.log(data)

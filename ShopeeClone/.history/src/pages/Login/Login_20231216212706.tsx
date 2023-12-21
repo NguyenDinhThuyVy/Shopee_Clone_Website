@@ -4,8 +4,6 @@ import { useForm } from 'react-hook-form'
 import { loginSchema, schema } from 'src/utils/rules'
 import Input from 'src/components/Input'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { useMutation } from 'react-query'
-import { loginAccount } from 'src/apis/auth.api'
 type FormData = loginSchema
 function Login() {
   const {
@@ -14,9 +12,6 @@ function Login() {
     formState: { errors }
   } = useForm<FormData>({
     resolver: yupResolver(schema)
-  })
-  const loginAccountMutaion = useMutation({
-    mutationFn: (body: FormData) => loginAccount(body)
   })
   const onSubmit = handleSubmit(() => {
     // console.log(data)
